@@ -4,6 +4,11 @@ A simple list built with React. Uses Redux for state/store management with a lay
 
 ## Getting Started
 
-`` yarn start ``
+```
+git clone https://github.com/wasafune/react-list-example.git
+cd react-list-example
+yarn install
+yarn start
+```
 
 And thats it! A new window/tab should open on your browser.
