@@ -1,5 +1,5 @@
 import { createSelector } from 'redux-orm'
-import orm from './orm'
+import orm from '../orm'
 
 // select odd ids from the store db and slice the first 10 items
 export const oddSelector = createSelector(
