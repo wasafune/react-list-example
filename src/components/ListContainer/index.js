@@ -1,23 +1,50 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+import { fetch } from '../../actions'
+import { oddSelector } from '../../selectors'
+
+import Post from './Post'
+import './style.css'
 
 class ListContainer extends Component {
-  constructor() {
-    super()
-  }
-
-  async componentDidMount() {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    console.log(response.data)
+  // make fetch request by dispatching action
+  componentDidMount() {
+    this.props.fetch()
   }
 
   render () {
+    const { oddList } = this.props
+    const domOddList = oddList.map(ele => {
+      return (
+        <Post {...ele} />
+      )
+    })
     return (
       <div className="list-container">
-        this is List Container
+        <h1>OddList</h1>
+        <ol>
+          {domOddList}
+        </ol>
       </div>
     )
   }
 }
 
-export default ListContainer
+const mapStateToProps = state => ({
+  oddList: oddSelector(state),
+})
+
+const mapDispatchToProps = {
+  fetch,
+}
+
+ListContainer.propTypes = {
+  oddList: PropTypes.array.isRequired,
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ListContainer)

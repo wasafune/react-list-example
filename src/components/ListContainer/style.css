@@ -1,0 +1,31 @@
+.list-container {
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 0 16px 0;
+}
+h1 {
+  font-family: "Roboto Slab";
+  font-weight: 300;
+  margin: 16px 0 8px 0;
+}
+ol {
+  font-family: "Roboto Slab";
+  font-size: 18px;
+  font-weight: 500;
+}
+li {
+  margin: 0 0 12px 0;
+}
+p {
+  text-align: left;
+  padding: 0 0 4px 0;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 300;
+}
+span {
+  font-family: "Roboto Slab";
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 2px 0 0;
+}
